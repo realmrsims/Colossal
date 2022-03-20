@@ -1,24 +1,24 @@
-const PogyClient = require("./Pogy");
+const ColossalClient = require("./Colossal");
 const config = require("./config.json");
 const domain = require("./config.js");
 
 
-const Pogy = new PogyClient(config);
+const Colossal = new ColossalClient(config);
 
 const color = require("./data/colors");
-Pogy.color = color;
+Colossal.color = color;
 
-Pogy.domain = domain.domain || `https://colossal.cf`;
+Colossal.domain = domain.domain || `https://colossal.cf`;
 
 const emoji = require("./data/emoji");
-Pogy.emoji = emoji;
+Colossal.emoji = emoji;
 
-let client = Pogy
+let client = Colossal
 const jointocreate = require("./structures/jointocreate");
 jointocreate(client);
 
-Pogy.react = new Map()
-Pogy.fetchforguild = new Map()
+Colossal.react = new Map()
+Colossal.fetchforguild = new Map()
 
 if(config.dashboard === "true"){
     const Dashboard = require("./dashboard/dashboard");
@@ -26,7 +26,7 @@ if(config.dashboard === "true"){
 }
 
         
-Pogy.start();
+Colossal.start();
 
 
 
